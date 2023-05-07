@@ -3,9 +3,8 @@ extends layout
 block content
   h1= title
   ul 
-    li
-      a(href="https://google.com") 링크
-    li
-      a(href="https://google.com") 링크
-    li
-      a(href="https://google.com") 링크
+    each p in data
+      li
+        a(href=`/posts/${p.id}`) #{p.title}
+  
+  button(onclick=`location.href='/form'`) 글쓰기
